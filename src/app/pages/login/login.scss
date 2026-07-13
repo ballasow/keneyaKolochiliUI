@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  background-color: #9fd3c7; // La couleur vert pastel de votre image
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    max-width: 60%; // Ajustez la taille de votre grand logo
+    height: auto;
+  }
+}
+
+.right {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 400px; // Largeur maximum du formulaire
+  padding: 40px;
+  box-shadow: none !important; // Pas d'ombre pour coller au design épuré
+  background: transparent;
+
+  .logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; // Centrer le petit logo
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #000;
+  }
+
+  p {
+    color: #555;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 5px; // Espacement entre les champs
+  }
+
+  .forgot {
+    display: block;
+    text-align: right;
+    color: #00897B;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+    // La couleur primaire par défaut de Angular Material est le violet. 
+    // Pour avoir le vert de l'image, il faut surcharger la couleur :
+    background-color: #4CAF50 !important; 
+    color: white !important;
+    margin-top: 5px;
+  }
+
+  .register {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000;
+
+    a {
+      color: #00897B;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Pour le mobile
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left {
+    flex: 0 0 200px;
+    width: 100%;
+  }
+}
