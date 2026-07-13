@@ -1,9 +1,7 @@
 import { Routes } from '@angular/router';
-import { ProfileAdmin } from './pages/admin/profile-admin/profile-admin';
+import { LoginComponent } from './pages/login/login.component';
 
-export const routes: Routes = [
-  {
-    path: 'profile-admin',
-    component: ProfileAdmin
-  }
-];
+export const routes: Routes = [{
+  path: '',
+  component: LoginComponent
+}];
