@@ -1,0 +1,119 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="logo-container">
+      <div class="logo-placeholder">
+        <mat-icon color="primary">favorite_border</mat-icon>
+        <span class="logo-text">K<b>+</b></span>
+      </div>
+    </div>
+
+    <mat-nav-list class="nav-list">
+      <a mat-list-item class="active-item">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>Tableau de board</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>notifications_active</mat-icon>
+        <span matListItemTitle>Rappels</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>directions_run</mat-icon>
+        <span matListItemTitle>Activités physiques</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>lightbulb</mat-icon>
+        <span matListItemTitle>Conseils</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>article</mat-icon>
+        <span matListItemTitle>Publications</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListItemIcon>bar_chart</mat-icon>
+        <span matListItemTitle>Statistiques</span>
+      </a>
+    </mat-nav-list>
+
+    <div class="logout-container">
+      <button mat-button class="logout-btn">
+        <mat-icon>logout</mat-icon>
+        Déconnexion
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <div class="content-header">
+      <h1 class="page-title">Rappels médicaux</h1>
+      <button mat-raised-button color="primary" class="add-reminder-btn">
+        <mat-icon>add</mat-icon>
+        Ajouter un rappel
+      </button>
+    </div>
+
+    <mat-tab-group class="custom-tabs">
+      <mat-tab label="Aujourd'hui">
+        <div class="tab-content">
+          <mat-card class="reminder-card" appearance="outlined">
+            <mat-card-content class="reminder-list">
+              
+              <div class="reminder-item">
+                <div class="reminder-time-group">
+                  <div class="status-indicator active"></div>
+                  <span class="reminder-time">08:00</span>
+                </div>
+                <div class="reminder-details">
+                  <div class="med-name">Paracétamol 500mg</div>
+                  <div class="med-dosage">1 comprimé</div>
+                </div>
+                <button mat-stroked-button class="status-btn">A prendre</button>
+              </div>
+
+              <mat-divider></mat-divider>
+
+              <div class="reminder-item">
+                <div class="reminder-time-group">
+                  <div class="status-indicator active"></div>
+                  <span class="reminder-time">14:00</span>
+                </div>
+                <div class="reminder-details">
+                  <div class="med-name">Vitamine D</div>
+                  <div class="med-dosage">1 comprimé</div>
+                </div>
+                <button mat-stroked-button class="status-btn">A prendre</button>
+              </div>
+
+              <mat-divider></mat-divider>
+
+              <div class="reminder-item">
+                <div class="reminder-time-group">
+                  <div class="status-indicator active"></div>
+                  <span class="reminder-time">20:00</span>
+                </div>
+                <div class="reminder-details">
+                  <div class="med-name">Amlodipine</div>
+                  <div class="med-dosage">1 comprimé</div>
+                </div>
+                <button mat-stroked-button class="status-btn">A prendre</button>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+
+          <div class="advice-banner">
+            <h3>Conseil</h3>
+            <p>Pensez à prendre vos médicaments à heures régulières pour de meilleurs résultats.</p>
+          </div>
+        </div>
+      </mat-tab>
+      
+      <mat-tab label="A venir">
+        <div class="tab-content empty-state">Aucun rappel à venir</div>
+      </mat-tab>
+      
+      <mat-tab label="Terminés">
+        <div class="tab-content empty-state">Aucun rappel terminé</div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>

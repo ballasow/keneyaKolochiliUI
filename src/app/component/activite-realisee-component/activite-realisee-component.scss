@@ -1,0 +1,257 @@
+// Variables de couleurs
+$primary-green: #37a372;
+$light-green-bg: #ebf6f0;
+$dark-text: #202020;
+$light-grey-bg: #f2f2f2;
+$muted-grey: #757575;
+$border-color: #e0e0e0;
+
+.app-container {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+// Sidenav gauche
+.sidenav {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+
+  .logo-container {
+    padding: 10px 24px 30px 24px;
+    
+    .logo-placeholder {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $primary-green;
+      
+      mat-icon {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+      }
+      
+      .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .nav-list {
+    flex-grow: 1;
+
+    a {
+      height: 48px;
+      margin: 4px 16px;
+      border-radius: 8px;
+      color: $muted-grey;
+      font-size: 14px;
+      font-weight: 500;
+
+      mat-icon {
+        color: $muted-grey;
+      }
+
+      &.active-item {
+        background-color: $light-green-bg !important;
+        color: $primary-green !important;
+
+        mat-icon {
+          color: $primary-green !important;
+        }
+      }
+    }
+  }
+
+  .logout-container {
+    padding: 16px;
+    
+    .logout-btn {
+      width: 100%;
+      justify-content: flex-start;
+      color: $muted-grey;
+      font-weight: 500;
+    }
+  }
+}
+
+// Contenu Principal
+.main-content {
+  background-color: #fafafa;
+  padding: 40px;
+
+  .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: $dark-text;
+      margin: 0;
+    }
+
+    .add-reminder-btn {
+      background-color: $primary-green;
+      color: white;
+      border-radius: 10px;
+      padding: 8px 20px;
+      font-weight: 500;
+      text-transform: none;
+      height: 46px;
+    }
+  }
+}
+
+// Onglets Angular Material Personnalisés
+::ng-deep .custom-tabs {
+  .mat-mdc-tab-header {
+    margin-bottom: 24px;
+  }
+  
+  .mat-mdc-tab-labels {
+    gap: 24px;
+  }
+
+  .mdc-tab {
+    padding: 0 16px;
+    height: 40px;
+    min-width: 100px;
+  }
+
+  .mdc-tab__text-label {
+    font-size: 16px;
+    font-weight: 600 !important;
+    color: $muted-grey;
+  }
+
+  .mdc-tab--active {
+    .mdc-tab__text-label {
+      color: $primary-green !important;
+    }
+  }
+
+  .mat-mdc-tab-header-active-indicator-dark {
+    background-color: $primary-green !important;
+    height: 3px;
+  }
+}
+
+// Contenu des onglets
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+
+  &.empty-state {
+    padding: 40px;
+    text-align: center;
+    color: $muted-grey;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid $border-color;
+  }
+}
+
+// Liste des rappels (Carte)
+.reminder-card {
+  border-radius: 16px !important;
+  border-color: $border-color !important;
+  background-color: #ffffff;
+  padding: 16px 24px;
+
+  .reminder-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reminder-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+
+    .reminder-time-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 120px;
+
+      .status-indicator {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 4px solid $primary-green;
+        background-color: transparent;
+      }
+
+      .reminder-time {
+        font-size: 24px;
+        font-weight: 700;
+        color: $dark-text;
+      }
+    }
+
+    .reminder-details {
+      flex-grow: 1;
+      padding-left: 24px;
+
+      .med-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-text;
+      }
+
+      .med-dosage {
+        font-size: 13px;
+        color: $muted-grey;
+        margin-top: 4px;
+      }
+    }
+
+    .status-btn {
+      border-color: transparent;
+      background-color: $light-green-bg;
+      color: $primary-green;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 0 16px;
+      font-size: 14px;
+      height: 36px;
+      pointer-events: none; // Uniquement indicatif comme sur l'image
+    }
+  }
+
+  mat-divider {
+    border-top-color: #f0f0f0;
+  }
+}
+
+// Zone de Conseil
+.advice-banner {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 16px 24px;
+
+  h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: $dark-text;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #404040;
+    line-height: 1.4;
+  }
+}
